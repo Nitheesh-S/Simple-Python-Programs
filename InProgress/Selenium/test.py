@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 page_url = 'https://www.bseindia.com/stock-share-price/city-union-bank-ltd/cub/532210/#!#equity'
 
 page = urlopen(page_url)
-soup = BeautifulSoup(page, 'lxml')
+soup = BeautifulSoup(page, 'html.parser')
 
 # name_box = soup.select(".viewsensexvalue .ng-binding")
 name_box = soup.select(".stockreach_title")
@@ -40,4 +40,4 @@ name_box = soup.select(".stockreach_title")
 #     b = re.sub('<.*?>$','', re.sub('^<.*?>','', a))
 #     print(b)
 
-print(name_box)
+print(soup)
